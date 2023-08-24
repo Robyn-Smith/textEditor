@@ -4,38 +4,39 @@ import { openDB } from 'idb';
 // Initialize the database
 const initdb = async () =>
   openDB('jate', 1, {
+    // Define the upgrade function to create the object store if it doesn't exist
     upgrade(db) {
       if (db.objectStoreNames.contains('jate')) {
         console.log('jate database already exists');
         return;
       }
+      // Create a new object store named jate with auto-incrementing keys
       db.createObjectStore('jate', { keyPath: 'id', autoIncrement: true });
-      console.log('jate database created');
+      console.log('successfully created JATE database');
     },
   });
 
-// Added logic to a method that accepts some content and adds it to the database
+// Method to PUT content into the database
 export const putDb = async (content) => {
-  console.log('Post to the database');
+  console.log('Post data to the database');
 
-  // Create a connection to the database database and version we want to use.
+  // Open a connection to the 'jate' database with value 1
   const jateDb = await openDB('jate', 1);
 
-  // Create a new transaction and specify the database and data privileges.
+  // Start a read-write transaction on the 'jate' object store
   const tx = jateDb.transaction('jate', 'readwrite');
 
-  // Open up the desired object store.
+  // Get the object store
   const store = tx.objectStore('jate');
 
-  // Use the .add() method on the store and pass in the content.
+  // Use the .put() method to add content to the object store
   const request = store.put({ id: 1, content: content });
 
-  // Get confirmation of the request.
+  // Wait for the request to complete and get the result
   const result = await request;
-  console.log('🚀 - data saved to the database', result);
-
-  //console.error('putDb not implemented');
+  console.log('successfully saved data to database', result);
 }
+
 // TODO: Add logic for a method that gets all the content from the database
 export const getDb = async () => {
   console.log('GET from the database');
