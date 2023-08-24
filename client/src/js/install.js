@@ -25,10 +25,12 @@ butInstall.addEventListener('click', async () => {
     // Reset the deferred prompt variable since it can only be used once
     window.deferredPrompt = null;
 
+    // Hide the button after it's clicked
     butInstall.classList.toggle('hidden', true);
 });
 
+// Listen for the "appinstalled" event which is fired when the app has been successfully installed
 window.addEventListener('appinstalled', (event) => {
-    // Clear prompt
+    // Clear the deferred prompt after the app is installed
     window.deferredPrompt = null;
 }); 
