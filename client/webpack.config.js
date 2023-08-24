@@ -25,6 +25,7 @@ module.exports = () => {
       }),
       new MiniCssExtractPlugin(),
 
+      // Inject the service worker into the application
       new InjectManifest({
         swSrc: './src-sw.js', // Path to the service worker source
         swDest: 'src-sw.js', // Destination filename for the injected service worker
