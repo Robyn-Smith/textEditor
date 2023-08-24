@@ -21,23 +21,24 @@ const pageCache = new CacheFirst({
   ],
 });
 
+// Warm the page cache for specific URLs
 warmStrategyCache({
   urls: ['/index.html', '/'],
   strategy: pageCache,
 });
 
+// Register route for navigation requests
 registerRoute(({ request }) => request.mode === 'navigate', pageCache);
 
-// TODO: Implement asset caching
+// Register route for style, script, and worker requests
 registerRoute(
-  
-  // Here we define the callback function that will filter the requests we want to cache (in this case, JS and CSS files)
+  //the callback function is defined and filters requests to cache
   ({ request }) => ['style', 'script', 'worker'].includes(request.destination),
   new StaleWhileRevalidate({
-    // Name of the cache storage.
+    // this is the cache storage name
     cacheName: 'asset-cache',
     plugins: [
-      // This plugin will cache responses with these headers to a maximum-age of 30 days
+      // The plugin caches responses with these headers to a max-age of 30 days
       new CacheableResponsePlugin({
         statuses: [0, 200],
       }),
