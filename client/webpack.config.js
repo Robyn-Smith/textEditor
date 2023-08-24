@@ -63,6 +63,7 @@ module.exports = () => {
             filename: 'assets/icons/[name].[ext]'  
           }// this is the original filename extension
         },
+        // Babel configuration for JavaScript files
         {
           test: /\.m?js$/,
           exclude: /(node_modules|bower_components)/,
