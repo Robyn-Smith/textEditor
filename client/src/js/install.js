@@ -1,11 +1,12 @@
-const butInstall = document.getElementById('buttonInstall');
+const butInstall = document.getElementById('buttonInstall');// Get the button element by its ID
 
+// Listen for the "beforeinstallprompt" event which is fired when the app can be installed
 window.addEventListener('beforeinstallprompt', (event) => {
 
-    // Store the triggered events
+    // Store the triggered events to use it later when installing
     window.deferredPrompt = event;
 
-    // Remove the hidden class from the button.    
+    // Remove the "hidden" class from the button to make it visible 
     butInstall.classList.toggle('hidden', false);
 });
 
