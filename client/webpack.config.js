@@ -33,9 +33,9 @@ module.exports = () => {
         // TODO: Create a manifest.json:
         fingerprints: false,
         inject: true,
-        name: 'Just another text editor',
-        short_name: 'J.A.T.E',
-        description: 'Takes notes with Javascript syntax highlighting',
+        name: 'Just Another Text Editor',
+        short_name: 'JATE',
+        description: 'Alloing users to edit text',
         background_color: '#225ca3',
         theme_color: '#225ca3',
         start_url: './',
@@ -60,8 +60,8 @@ module.exports = () => {
           test: /\.(png|svg|jpg|jpeg|gif|ico)$/i,
           type: 'asset/resource',
           generator: {
-            filename: 'assets/icons/[name].[ext]'  // to maintain the original filename and extension
-          }
+            filename: 'assets/icons/[name].[ext]'  
+          }// this is the original filename extension
         },
         {
           test: /\.m?js$/,
