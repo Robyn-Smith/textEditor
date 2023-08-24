@@ -1,3 +1,4 @@
+// Import the necessary function from the 'idb' library
 import { openDB } from 'idb';
 
 const initdb = async () =>
@@ -12,7 +13,7 @@ const initdb = async () =>
     },
   });
 
-// TODO: Add logic to a method that accepts some content and adds it to the database
+// Added logic to a method that accepts some content and adds it to the database
 export const putDb = async (content) => {
   console.log('Post to the database');
 
