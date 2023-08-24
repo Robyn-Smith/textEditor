@@ -23,6 +23,7 @@ module.exports = () => {
         template: './index.html',
         title: 'Webpack Plugin',
       }),
+      // Extract CSS into separate files
       new MiniCssExtractPlugin(),
 
       // Inject the service worker into the application
