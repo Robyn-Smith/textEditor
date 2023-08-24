@@ -30,7 +30,7 @@ module.exports = () => {
         swDest: 'src-sw.js',
       }),
       new WebpackPwaManifest({
-        // created a manifest.json:
+        // Web App Manifest configuration
         fingerprints: false,
         inject: true,
         name: 'Just Another Text Editor',
