@@ -1,6 +1,7 @@
 // Import the necessary function from the 'idb' library
 import { openDB } from 'idb';
 
+// Initialize the database
 const initdb = async () =>
   openDB('jate', 1, {
     upgrade(db) {
