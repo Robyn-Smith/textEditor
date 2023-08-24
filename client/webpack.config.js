@@ -61,7 +61,7 @@ module.exports = () => {
           type: 'asset/resource',
           generator: {
             filename: 'assets/icons/[name].[ext]'  
-          }// this is the original filename extension
+          }// Define the output path and filename for images
         },
         // Babel configuration for JavaScript files
         {
