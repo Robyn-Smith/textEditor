@@ -10,18 +10,19 @@ window.addEventListener('beforeinstallprompt', (event) => {
     butInstall.classList.toggle('hidden', false);
 });
 
+// Add a click event listener to the install button
 butInstall.addEventListener('click', async () => {
 
     const promptEvent = window.deferredPrompt;
 
     if (!promptEvent) {
-        return;
+        return; // If the deferred prompt is not available, exit
     }
 
-    // Show prompt
+    // Show the installation prompt
     promptEvent.prompt();
 
-    // Reset the deferred prompt variable, it can only be used once.
+    // Reset the deferred prompt variable since it can only be used once
     window.deferredPrompt = null;
 
     butInstall.classList.toggle('hidden', true);
