@@ -13,7 +13,7 @@ module.exports = () => {
     entry: {
       main: './src/js/index.js',
       install: './src/js/install.js'
-    },
+    },// Define entry points of application
     output: {
       filename: '[name].bundle.js',
       path: path.resolve(__dirname, 'dist'),
