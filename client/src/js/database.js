@@ -7,7 +7,7 @@ const initdb = async () =>
     // Define the upgrade function to create the object store if it doesn't exist
     upgrade(db) {
       if (db.objectStoreNames.contains('jate')) {
-        console.log('jate database already exists');
+        console.log('JATE database exists');
         return;
       }
       // Create a new object store named jate with auto-incrementing keys
@@ -18,7 +18,7 @@ const initdb = async () =>
 
 // Method to PUT content into the database
 export const putDb = async (content) => {
-  console.log('Post data to the database');
+  console.log('POST data to the database');
 
   // Open a connection to the 'jate' database with value 1
   const jateDb = await openDB('jate', 1);
@@ -37,25 +37,25 @@ export const putDb = async (content) => {
   console.log('successfully saved data to database', result);
 }
 
-// TODO: Add logic for a method that gets all the content from the database
+// Method to get content from the database
 export const getDb = async () => {
-  console.log('GET from the database');
+  console.log('GET request from database');
 
-  // Create a connection to the database database and version we want to use.
+  // Open a connection to the 'jate' database
   const jateDb = await openDB('jate', 1);
 
-  // Create a new transaction and specify the database and data privileges.
+  // Start a read-only transaction on the 'jate' object store
   const tx = jateDb.transaction('jate', 'readonly');
 
-  // Open up the desired object store.
+  // Get the object store
   const store = tx.objectStore('jate');
 
-  // Use the .get() method to get a piece of data from the database based on the id.
+  // Use the .get() method to retrieve data from the object store based on the id
   const request = store.get(1);
 
-  // Get confirmation of the request.
+  // Wait for the request to complete and return the value
   const result = await request;
   return result.value;
-  //console.error('getDb not implemented');
 }
+// Initialize the database when the module is loaded
 initdb();
