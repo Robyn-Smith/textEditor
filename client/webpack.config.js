@@ -17,7 +17,7 @@ module.exports = () => {
     output: {
       filename: '[name].bundle.js',
       path: path.resolve(__dirname, 'dist'),
-    },
+    }, // Define the output directory and filenames for bundled files
     plugins: [
       // HTML template generation
       new HtmlWebpackPlugin({
