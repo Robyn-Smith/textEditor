@@ -29,6 +29,8 @@ module.exports = () => {
         swSrc: './src-sw.js',
         swDest: 'src-sw.js',
       }),
+
+      // Generate a Web App Manifest
       new WebpackPwaManifest({
         // Web App Manifest configuration
         fingerprints: false,
