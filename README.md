@@ -60,4 +60,5 @@ Once the user has opened the application, they will see the heading Just Another
 ![A screenshot of the JATE application lighthouse](/client/src/images/Screenshot3.png)
 
 # Link to deployed heroku
+https://robynsmithtexteditor-e33b3dd474e7.herokuapp.com/
 
