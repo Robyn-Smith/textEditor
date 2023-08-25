@@ -54,11 +54,10 @@ Finally, the user can see the application by using the link http://localhost:300
 Once the user has opened the application, they will see the heading Just Another Text Editor and a button to install in the top left of the page. This installs the web application as an icon on the users desktop. The user also has the option to type data that will be stored while offline.
 
 ## Screenshots of Application
-![A screenshot of the homepage](/assets/homepage.png)
-![A screenshot of the login page](/assets/login.png)
-![A screenshot of the dashboard](/assets/dashboard.png)
-![A screenshot of the comment page](/assets/comments.png)
-![A screenshot of the edit post page](/assets/edit.png)
+![A screenshot of the JATE application](/client/src/images/Screenshot1.png)
+![A screenshot of the JATE application offline](/client/src/images/Screenshot2.png)
+![A screenshot of the JATE icon on desktop](/client/src/images/Screenshot3.png)
+![A screenshot of the JATE application lighthouse](/client/src/images/Screenshot3.png)
 
 # Link to deployed heroku
-https://robynsmith-techblog-ce4774308a7e.herokuapp.com/
+
