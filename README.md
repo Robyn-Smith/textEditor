@@ -62,3 +62,5 @@ Once the user has opened the application, they will see the heading Just Another
 # Link to deployed heroku
 https://robynsmithtexteditor-e33b3dd474e7.herokuapp.com/
 
+# Walkthrough Video
+https://clipchamp.com/watch/v2rq70LWFIO
